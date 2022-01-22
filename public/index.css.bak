@@ -1,0 +1,203 @@
+:root {
+  --base-font-family: 'Fira Sans', sans-serif, Helvetica;
+
+  --dark-color: #027502;
+  --light-color: #c2fd91;
+  --mid-color: #a6fe5d;
+
+  --shadow-color: #00000029;
+  --rack-last-back-color: #a6fe5d;
+  --rack-back-color: #a6fe5d;
+
+  --main-header-text-color: var(--dark-color);
+  --background-start-color: #d9fb9d;
+  --background-end-color: #98FB98;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--base-font-family);
+}
+
+body {
+  padding: 0 calc(100vw / 24);
+  min-height: 100vh;
+  background: linear-gradient(var(--background-start-color), var(--background-end-color)) center / cover no-repeat;
+  transition: .5s;
+}
+
+header#main-header {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4vh 0;
+  font-size: clamp(1rem, 2.7vw, 3.125rem);
+  font-weight: bolder;
+  color: var(--main-header-text-color);
+}
+
+
+main {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 4vh;
+  margin-bottom: 4vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  row-gap: 4vh;
+  column-gap: calc(8% / 3);
+}
+
+.tm-rack {
+  width: 23%;
+  border-style: outset;
+  border-width:	5px;
+  border-color:	var(--mid-color);
+  padding: 1vw 1.2vw;
+  box-shadow: 2px 2px 4px var(--shadow-color);
+  background-color: var(--rack-back-color);
+}
+
+.tm-rack:last-child {
+  background-color: var(--rack-last-back-color);
+  transition: background-color 1s ease;
+}
+
+.tm-rack:last-child:hover {
+  background-color: var(--rack-back-color);
+}
+
+#tm-rack-add-rack {
+ border: solid;
+  padding: 10px;
+  border-radius: 1vw;
+  border-color:	var(--dark-color);
+  border-width:	2px;
+  background-color: var(--light-color);
+  margin-bottom: 0;
+  font-weight: 400;
+  color: var(--dark-color);
+  font-size: clamp(0.75rem, 2vw, 2rem);
+}
+
+#tm-rack-add-rack:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tm-rack-header {
+  font-size: clamp(0.75rem, 2vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 1vw;
+  color: var(--dark-color);
+}
+
+.tm-rack-add-product {
+  border: solid;
+  padding: 5px;
+  border-radius: 1vw;
+  border-color:	var(--dark-color);
+  border-width:	2px;
+  background-color: var(--light-color);
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+  color: var(--dark-color);
+}
+
+.tm-rack-add-product:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tm-rack-product {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  box-shadow: 2px 2px 4px var(--shadow-color);
+  background-color: var(--light-color);
+  border: 2px solid var(--light-color);
+  transition: background-color 0.5s ease, border 0.5s ease;
+}
+
+.tm-rack-product:hover {
+  background-color: var(--mid-color);
+  border-color: var(--dark-color);
+}
+
+.tm-rack-product-text {
+  overflow-wrap: anywhere;
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+}
+
+.tm-rack-product-controls-row {
+  display: flex;
+  justify-content: center;
+  gap: calc(2vw / 3);
+}
+
+.tm-rack-product-controls-row:first-child {
+  margin-bottom: calc(2vw / 3);
+}
+
+.tm-rack-product-controls-button {
+  width: 2vw;
+  height: 2vw;
+  opacity: 0.6;
+  border: none;
+}
+
+.tm-rack-product-controls-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.left-arrow {
+  background: url(assets/left-arrow.svg) center / cover;
+}
+
+.tm-rack:first-child .left-arrow {
+  display: none;
+}
+
+.right-arrow {
+  background: url(assets/right-arrow.svg) center / cover;
+}
+
+.tm-rack:nth-last-child(2) .right-arrow {
+  display: none;
+}
+
+.edit-icon {
+  background: url(assets/edit.svg) center / cover;
+}
+
+.delete-icon {
+  background: url(assets/delete-button.svg) center / cover;
+}
+
+#add-rack-input {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 0.7vw;
+  box-shadow: 0 0 4px var(--shadow-color);
+  padding: 0.6vw;
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+  color: black;
+  opacity: 0.7;
+  outline: none;
+  display: none;
+}
+
+#add-rack-input:hover,
+#add-rack-input:focus {
+  opacity: 1;
+}
